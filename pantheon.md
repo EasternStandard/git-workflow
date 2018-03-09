@@ -1,6 +1,6 @@
 # Pantheon Introduction
 
-Pantheon provides a robust three-tier environment that is tied directly to the status of the `master` branch of the git repo provisioned when the project is created. Additionally, an unlimited amount of multidev environments can be created based off of any of the main three environments. These environments exist as separate branches of the repository, but they have their own separate files and database storage. Pantheon provides one-click ways to move the code, files, and database between environments.
+Pantheon provides a robust three-tier environment that is tied directly to the status of the `master` branch of the git repo provisioned when the project is created. Additionally, up to 10 multidev environments can be created based off of any of the main three environments. These environments exist as separate branches of the repository, but they have their own separate files and database storage. Pantheon provides one-click ways to move the code, files, and database between environments.
 
 # Technical Information: How does Pantheon power three or more environments from the same repo?
 
@@ -39,3 +39,17 @@ Since Pantheon is built on top of vanilla git, it is perfectly acceptable to wor
 In a normal git workflow, you must first check out the `master` branch before merging into it; similarly, in Pantheon, you must have the target environment open on your screen in order to merge into it.
 
 Merging code in this way will simply merge the branch that powers the selected multidev environment into the environment shown on the screen. Note that it is also possible to merge one multidev environment into another using the same process.
+
+# Initial Git Workflow
+
+At the initial creation of the project, a repo will be provisioned. Developers should check this repo out to begin their work. At the start of a project, all work can be done directly on the `master` branch since the initial work is generally things like setting up modules, features, configuration, etc.
+
+Once multiple developers are working on the project, developers should switch to using feature branches and merging into `master` at the conclusion of the work on that branch. This feature branch workflow minimizes the risk of merge conflicts directly on the `master` branch. It is recommended that developers keep their feature branches small to minimize the risk of divergance.
+
+# Git workflow from Beta Handoff/Content Entry to Pre-Launch
+
+Once the client is allowed into the site, a "test" environment should be created. The client should do all of the content entry in the "test" environment. Developers can create new multidev environments either based off of the current "test" environment (which will create a multidev environment with the codebase of the `master` branch but the files and database of the "test" environment) or from the "dev" environment. Once the client has started content entry, fields **must not** be deleted and databases **must not** be copied into the "test" environment. Only configuration changes, preferably using the [Features](https://www.drupal.org/project/features) module, should be pushed into the "test" environment.
+
+Feature branches can be merged back into the `master` branch in preparation for a push to the "test" environment; however, be aware that everything on the `master` branch will be deployed; it is not possible to pick and choose which commits will be sent to the "test" environment. For this reason, some projects have a dedicated multidev environment called `release` (or something similar) where things can be cherry-picked from feature branches, and which is the only branch to be merged into `master`.
+
+To deploy the changes in the `master` branch to the "test" environment, open the "Test" tab, enter a "Deploy Log Message", and click "Deploy Code from Development to Test Environment." Note that no other branches can be merged directly into the "test" environment.
