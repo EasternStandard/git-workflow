@@ -56,7 +56,11 @@ Once multiple developers are working on the project, developers should switch to
 
 # Git workflow from Beta Handoff/Content Entry to Pre-Launch
 
-Once the client is allowed into the site, a "test" environment should be created. The client should do all of the content entry in the "test" environment. Developers can create new multidev environments either based off of the current "test" environment \(which will create a multidev environment with the codebase of the `master` branch but the files and database of the "test" environment\) or from the "dev" environment. Once the client has started content entry, fields **must not** be deleted and databases **must not** be copied into the "test" environment. Only configuration changes, preferably using the [Features](https://www.drupal.org/project/features) module, should be pushed into the "test" environment.
+Once the client is allowed into the site, a "test" environment should be created. The client should do all of the content entry in the "test" environment. Developers can create new multidev environments either based off of the current "test" environment \(which will create a multidev environment with the codebase of the `master` branch but the files and database of the "test" environment\) or from the "dev" environment.
+
+> #### danger::Important
+>
+> Once the client has started content entry, fields **must not** be deleted and databases **must not** be copied into the "test" environment. Only configuration changes, preferably using the [Features](https://www.drupal.org/project/features) module, should be pushed into the "test" environment.
 
 Feature branches can be merged back into the `master` branch in preparation for a push to the "test" environment; however, be aware that everything on the `master` branch will be deployed; it is not possible to pick and choose which commits will be sent to the "test" environment. For this reason, some projects have a dedicated multidev environment called `release` \(or something similar\) where things can be cherry-picked from feature branches, and which is the only branch to be merged into `master`.
 
