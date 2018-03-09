@@ -21,3 +21,14 @@ The "test" and "live" environments both work the same way. When a Pantheon proje
 ![](/assets/Screen Shot 2018-03-09 at 08.15.06.png)
 
 Once the "test" environment has been initialized, a tag will be created on the `master` branch at the current `HEAD` commit, using the format `pantheon_test_nn`. The same is true for the "live" environment: a new tag will be created on the `master` branch at the current `HEAD` commit, using the format `pantheon_live_nn`.
+
+![](/assets/Screen Shot 2018-03-09 at 08.27.56.png)
+
+The "test" and "live" environments are frozen at the highest tag ending in `nn`. It's important to note that this is a numeric sorting, not a string sorting, so while `2` sorts higher than `20` when you're looking at an alphabetical list of tags, Pantheon will load the tag ending in `20` rather than `2`.
+
+## Multi-dev Environments
+
+Multi-dev environments use the same tagging workflow as the "test" and "live" environments, but 
+
+
+
