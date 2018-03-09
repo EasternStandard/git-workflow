@@ -1,6 +1,6 @@
 # Pantheon Introduction
 
-Pantheon provides a robust three-tier environment that is tied directly to the status of the `master` branch of the git repo provisioned when the project is created. Additionally, an unlimited amount of multi-dev environments can be created based off of any of the main three environments. These environments exist as separate branches of the repository, but they have their own separate files and database storage. Pantheon provides one-click ways to move the code, files, and database between environments.
+Pantheon provides a robust three-tier environment that is tied directly to the status of the `master` branch of the git repo provisioned when the project is created. Additionally, an unlimited amount of multidev environments can be created based off of any of the main three environments. These environments exist as separate branches of the repository, but they have their own separate files and database storage. Pantheon provides one-click ways to move the code, files, and database between environments.
 
 # Technical Information: How does Pantheon power three or more environments from the same repo?
 
@@ -26,9 +26,9 @@ Once the "test" environment has been initialized, a tag will be created on the `
 
 The "test" and "live" environments are frozen at the highest tag ending in `nn`. It's important to note that this is a numeric sorting, not a string sorting, so while `2` sorts higher than `20` when you're looking at an alphabetical list of tags, Pantheon will load the tag ending in `20` rather than `2`.
 
-## Multi-dev Environments
+## Multidev Environments
 
-Multi-dev environments operate under the same principle as the "dev" environment: the environment reflects the `HEAD` commit of the branch that was set up for the environment. Multi-dev environments have an 11-character restriction on the name of the branch and **MUST** use alpha-numeric characters and dashes, not underscores. It is generally best to create a multi-dev environment using the Pantheon dashboard, though it is also possible to create a git branch outside of Pantheon, as long as it follows the naming restrictions, and later convert it into a multi-dev environment. Multi-dev environments will live at the url `https://[branch-name]-[site-name].pantheonsite.io`.
+Multidev environments operate under the same principle as the "dev" environment: the environment reflects the `HEAD` commit of the branch that was set up for the environment. Multidev environments have an 11-character restriction on the name of the branch and **MUST** use alpha-numeric characters and dashes, not underscores. It is generally best to create a multidev environment using the Pantheon dashboard, though it is also possible to create a git branch outside of Pantheon, as long as it follows the naming restrictions, and later convert it into a multidev environment. Multidev environments will live at the url `https://[branch-name]-[site-name].pantheonsite.io`.
 
 ### Merging environment/branches
 
@@ -38,3 +38,4 @@ Since Pantheon is built on top of vanilla git, it is perfectly acceptable to wor
 
 In a normal git workflow, you must first check out the `master` branch before merging into it; similarly, in Pantheon, you must have the target environment open on your screen in order to merge into it.
 
+Merging code in this way will simply merge the branch that powers the selected multidev environment into the environment shown on the screen. Note that it is also possible to merge one multidev environment into another using the same process.
