@@ -1,1 +1,2 @@
-This file serves as an introduction to your Knowledge Base, it is displayed on the homepage of your website. Use it to provide more context to your visitors.
+This git book contains information on the standard git workflow, both pre- and post-launch, for projects launched on Pantheon, Acquia, and any generic cloud hosting solution.
+
