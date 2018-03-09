@@ -28,7 +28,8 @@ The "test" and "live" environments are frozen at the highest tag ending in `nn`.
 
 ## Multi-dev Environments
 
-Multi-dev environments use the same tagging workflow as the "test" and "live" environments, but 
+Multi-dev environments operate under the same principle as the "dev" environment: the environment reflects the `HEAD` commit of the branch that was set up for the environment. Multi-dev environments have an 11-character restriction on the name of the branch and **MUST** use alpha-numeric characters and dashes, not underscores. It is generally best to create a multi-dev environment using the Pantheon dashboard, though it is also possible to create a git branch outside of Pantheon, as long as it follows the naming restrictions, and later convert it into a multi-dev environment. Multi-dev environments will live at the url `https://[branch-name]-[site-name].pantheonsite.io`.
 
+### Merging environment/branches
 
-
+Since Pantheon is built on top of vanilla git, it is perfectly acceptable to work on a feature branch and later merge into another feature branch or into `master` using your git tool of choice. In some cases this is actually preferable, especially if there are merge conflicts that need to be resolved. In other cases, Pantheon keeps track of which environments and branches are available and allows you to merge them together in one click:
