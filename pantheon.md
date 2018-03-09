@@ -24,7 +24,11 @@ Once the "test" environment has been initialized, a tag will be created on the `
 
 ![](/assets/pantheon-tag-example.png)
 
-The "test" and "live" environments are frozen at the highest tag ending in `nn`. It's important to note that this is a numeric sorting, not a string sorting, so while `2` sorts higher than `20` when you're looking at an alphabetical list of tags, Pantheon will load the tag ending in `20` rather than `2`.
+The "test" and "live" environments are frozen at the highest tag ending in `nn`.
+
+> #### info::Note
+>
+> This is a numeric sorting, not a string sorting, so while `2` sorts higher than `20` when you're looking at an alphabetical list of tags, Pantheon will load the tag ending in `20` rather than `2`.
 
 ## Multidev Environments
 
@@ -38,7 +42,11 @@ Since Pantheon is built on top of vanilla git, it is perfectly acceptable to wor
 
 In a normal git workflow, you must first check out the `master` branch before merging into it; similarly, in Pantheon, you must have the target environment open on your screen in order to merge into it.
 
-Merging code in this way will simply merge the branch that powers the selected multidev environment into the environment shown on the screen. Note that it is also possible to merge one multidev environment into another using the same process.
+Merging code in this way will simply merge the branch that powers the selected multidev environment into the environment shown on the screen.
+
+> #### info::Note
+>
+> It's also possible to merge one multidev environment into another using the same process.
 
 # Initial Git Workflow
 
@@ -52,7 +60,11 @@ Once the client is allowed into the site, a "test" environment should be created
 
 Feature branches can be merged back into the `master` branch in preparation for a push to the "test" environment; however, be aware that everything on the `master` branch will be deployed; it is not possible to pick and choose which commits will be sent to the "test" environment. For this reason, some projects have a dedicated multidev environment called `release` \(or something similar\) where things can be cherry-picked from feature branches, and which is the only branch to be merged into `master`.
 
-To deploy the changes in the `master` branch to the "test" environment, open the "Test" tab, enter a "Deploy Log Message", and click "Deploy Code from Development to Test Environment." Note that no other branches can be merged directly into the "test" environment.
+To deploy the changes in the `master` branch to the "test" environment, open the "Test" tab, enter a "Deploy Log Message", and click "Deploy Code from Development to Test Environment."
+
+> #### warning::Note
+>
+> No other branches can be merged directly into the "test" environment.
 
 ![](/assets/pantheon-deploy-to-test.png)
 
