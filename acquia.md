@@ -17,8 +17,8 @@ Acquia provides a great amount of flexibility when it comes to which commit on t
 For most projects, it is considered best practice to start with the environments configured this way:
 
 * **Dev**: track `master` branch
-* **Stage**: track `tags/WELCOME` (shows the "Welcome" screen as demonstrated above)
-* **PROD**: track `tags/WELCOME`
+* **Stage**: track `tags/WELCOME` \(shows the "Welcome" screen as demonstrated above\)
+* **Prod**: track `tags/WELCOME`
 
 > #### info::What's that RA environment?
 >
@@ -30,7 +30,7 @@ For most projects, it is considered best practice to start with the environments
 
 # Initial Git Workflow
 
-At the initial creation of project, a repo will be provisioned. Developers should check this repo out to being their work. At the start of a project, all work should be done directly on the `master` branch since the initial work is generally things like settup up modules, features, configuration, etc. As soon as there is a stable Drupal installation available, the configuration (and database, if necessary) should be copied up to Acquia and the "dev" environment should be set to track the `master` branch:
+At the initial creation of project, a repo will be provisioned. Developers should check this repo out to being their work. At the start of a project, all work should be done directly on the `master` branch since the initial work is generally things like settup up modules, features, configuration, etc. As soon as there is a stable Drupal installation available, the configuration \(and database, if necessary\) should be copied up to Acquia and the "dev" environment should be set to track the `master` branch:
 
 ![](assets/acquia-code-switch.png)
 
@@ -59,3 +59,6 @@ Following production launch, the developers should follow git best practices whe
 * For scoped new features, a new feature branch should be created from the "dev" environment and merged into `master` along with any other features as part of a scheduled release.
 * For fixes for non-breaking but priority bugs on work that is in the "stage" environment, a new feature branch should be created from the tagged "test" environment release. The developer should then create the fix\(es\), merge that branch into `master`, create a new tag, push the tag, and set the "test" environment to use that tag.
 * For hotfixes/breaking bugs in production, a new feature branch should be created from the tagged "prod" environment release. The developer should then create the fix\(es\), merge that branch into `master`, create a new tag, push the tag, and set the "prod" environment to use that tag.
+
+
+
