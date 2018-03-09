@@ -33,3 +33,8 @@ Multi-dev environments operate under the same principle as the "dev" environment
 ### Merging environment/branches
 
 Since Pantheon is built on top of vanilla git, it is perfectly acceptable to work on a feature branch and later merge into another feature branch or into `master` using your git tool of choice. In some cases this is actually preferable, especially if there are merge conflicts that need to be resolved. In other cases, Pantheon keeps track of which environments and branches are available and allows you to merge them together in one click:
+
+![](/assets/pantheon-merge.png)
+
+In a normal git workflow, you must first check out the `master` branch before merging into it; similarly, in Pantheon, you must have the target environment open on your screen in order to merge into it.
+
