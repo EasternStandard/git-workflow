@@ -56,3 +56,11 @@ To deploy the changes in the `master` branch to the "test" environment, open the
 
 ![](/assets/pantheon-deploy-to-test.png)
 
+# Git workflow for Launch
+
+At some point prior to launch, the "live" environment will need to be created and the existing database from the "test" environment will be pushed up to the "live" environment. The workflow for promoting "test" to "live" is the same as promoting "dev" to "test."
+
+Once all three environments are available, the developers should follow git best practices when creating new multidev environments:
+
+* For scoped new features, a new multidev environment/feature branch should be created from the "dev" environment and merged into `master` along with any other features as part of a scheduled release.
+* For fixes for non-breaking but priority bugs, a new feature branch should be created from the command line or from a Git GUI from the latest tag for the "test" environment. The developer should then create a multidev environment on that branch:
