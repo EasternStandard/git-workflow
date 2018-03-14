@@ -34,7 +34,11 @@ In a subtree workflow, code change commits are rarely, if ever, made to the prim
 The primary repository is updated via a single command run from the root of the checked-out primary repository:
 
 ```
-git subtree pull --prefix </path/to/destination/folder> <secondary repository Git URL> <secondary repository branch name> --squash -m "<commit message>"
+git subtree pull \
+  --prefix </path/to/destination/folder> \
+  <secondary repository Git URL> \
+  <secondary repository branch name> \
+  --squash -m "<commit message>"
 ```
 
 The following items should be changed:
