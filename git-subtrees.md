@@ -12,8 +12,8 @@ In these cases, and others, Eastern Standard uses a "Git subtree" workflow.
 
 Using Git subtrees requires two separate repositories:
 
-* The primary repository is the repository upon which the site is based.
-* The secondary repository is any repository that contributes to the primary repository.
+* The **primary repository** is the repository upon which the site is based.
+* The **secondary repository** is any repository that contributes to the primary repository.
 
 When viewed with a Git GUI client, the primary repository contains a history similar to the following:
 
