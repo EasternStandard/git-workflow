@@ -1,6 +1,7 @@
-# Summary
+# Table of contents
 
 * [Introduction](README.md)
-* [Panthon](pantheon.md)
+* [Pantheon](panthon.md)
 * [Acquia](acquia.md)
 * [Git Subtrees](git-subtrees.md)
+
