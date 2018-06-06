@@ -2,7 +2,7 @@
 
 ## Acquia Introduction
 
-Acquia provides a robust three-tier environment that is tied directly to the `master` branch of the git repo provisioned when the project is created. Unlike [Pantheon](pantheon.md), Acquia does not provide any means of creating additional environments outside of the "dev", "stage", and "prod" environments.
+Acquia provides a robust three-tier environment that is tied directly to the `master` branch of the git repo provisioned when the project is created. Unlike [Pantheon](panthon.md), Acquia does not provide any means of creating additional environments outside of the "dev", "stage", and "prod" environments.
 
 When an Acquia application is initially provisioned, each environment is set to show only a "Welcome" screen:
 
